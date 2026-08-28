@@ -1,0 +1,1 @@
+(nav>ul>li*3>a[href="#"]{Link $})+(main>(h1{Título Destacado}+p*3{Lorem ipsum dolor sit amet, consectetur adipiscing elit.}+(article>p*2{Lorem ipsum dolor sit amet, consectetur adipiscing elit.})+(article>span{Todos los derechos reservados}+span{2025})))+(footer>ul>li*4>a[href="#"]{Enlace $})
