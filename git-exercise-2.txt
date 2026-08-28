@@ -1,0 +1,51 @@
+# Ejercicio 2 Git - Situaciones que te van a pasar
+
+## Objetivo
+
+Los tres líos más comunes del día a día. Resuelve cada uno y **explica qué hace el comando** que has
+usado.
+
+## Casos
+
+### 1. He creado la rama desde el sitio equivocado
+
+Estabas en la rama `feature/footer` y desde ahí has creado `feature/header`. Ahora `feature/header`
+arrastra commits que no son suyos.
+
+- ¿Cómo lo detectas? (mira `git log --oneline --graph`) Justamente con el grafo ves que el commit de feature/footer es ancestro de feature/header.
+- Arréglalo: la rama tiene que salir de `main`. detecté el problema con git log --oneline --graph --decorate --all, porque el commit de feature/footer aparecía como ancestro de feature/header. Lo corregí con: git rebase --onto main feature/footer feature/header Ese comando toma los commits exclusivos de feature/header posteriores a feature/footer y los reaplica sobre main.
+
+### 2. He escrito mal el mensaje del último commit
+
+Has hecho `git commit -m "arreglos"` y no cumple `conventional commits`.
+
+- Cámbialo sin perder los cambios. git commit --amend reemplaza el último commit conservando sus cambios, pero permite modificar su metadata, como el mensaje del commit.
+
+- ¿Y si ya habías hecho `push`? ¿Qué precaución hay que tener entonces? Si el commit ya fue publicado en el repositorio remoto, sería necesario actualizar la rama con git push --force-with-lease, teniendo cuidado de no sobrescribir el trabajo de otros colaboradores.
+
+### 3. `main` ha avanzado mientras yo trabajaba
+
+Llevas dos días en tu rama y un compañero ha mergeado cosas en `main`.
+
+- Trae esos cambios a tu rama.
+- Si aparece un conflicto, resuélvelo y explica qué significan las marcas
+  `<<<<<<<`, `=======` y `>>>>>>>`. Tu version actual, separacion y cambio entrante.
+
+## Preguntas
+
+1. ¿Por qué no se trabaja nunca directamente sobre `main`?
+Porque main debe mantenerse como una rama estable y compartida. Los cambios se desarrollan en ramas 
+separadas para poder revisarlos, probarlos y aprobarlos mediante un Pull Request antes de integrarlos. 
+Trabajar directamente sobre main elimina ese control y aumenta el riesgo de introducir cambios 
+incorrectos o afectar al trabajo del equipo.
+
+2. ¿Cuándo se puede usar la rama `main`?
+Se usa como rama base desde la que se crean nuevas ramas y como rama de destino de los Pull Requests. 
+También puedes cambiarte a main para actualizarla con los últimos cambios del remoto antes de comenzar trabajo nuevo. 
+Lo que no se debe hacer, según el flujo de la capacitación, es desarrollar y hacer commits directamente sobre ella.
+
+3. ¿Qué es un `force push` y por qué es peligroso en una rama compartida?
+Un force push fuerza al repositorio remoto a aceptar el historial local aunque no coincida con el historial remoto. 
+Se suele necesitar después de reescribir commits, por ejemplo con rebase o commit --amend. Es peligroso en una rama 
+compartida porque puede sobrescribir o eliminar commits que otra persona haya subido. Por eso, cuando sea necesario 
+reescribir una rama remota, es más seguro usar:
