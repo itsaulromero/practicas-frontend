@@ -1,0 +1,32 @@
+{
+  "name": "practicas-frontend",
+  "version": "1.0.0",
+  "description": "Repositorio destinado a los ejercicios de fundamentos frontend realizados durante la capacitación.",
+  "main": "index.js",
+  "scripts": {
+    "tailwind": "tailwindcss -i tailwind/input.css -o tailwind/output.css --watch",
+    "tailwind:build": "tailwindcss -i tailwind/input.css -o tailwind/output.css",
+    "ex": "tsx",
+    "typecheck": "tsc --noEmit",
+    "format": "prettier --write ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/itsaulromero/practicas-frontend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/itsaulromero/practicas-frontend/issues"
+  },
+  "homepage": "https://github.com/itsaulromero/practicas-frontend#readme",
+  "devDependencies": {
+    "prettier": "^3.9.6",
+    "prettier-plugin-tailwindcss": "^0.8.1",
+    "tailwindcss": "^3.4.19",
+    "tsx": "^4.23.13",
+    "typescript": "^7.0.2"
+  }
+}
