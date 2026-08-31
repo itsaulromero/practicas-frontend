@@ -2,6 +2,7 @@
 export default {
   // Tailwind analiza estas rutas para detectar las clases utilizadas; si un archivo queda fuera, sus clases no se generan.
   content: ["./tailwind/**/*.html"],
+  darkMode: "class",
   theme: {
     extend: {
       colors: {

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 3</title>
+    <link rel="stylesheet" href="./output.css" />
+  </head>
+
+  <body
+    class="min-h-screen bg-slate-100 font-sans text-secondary transition-colors dark:bg-slate-950 dark:text-slate-100"
+  >
+    <main class="mx-auto max-w-6xl p-4 md:p-6 lg:p-8">
+      <header class="mb-6 flex items-center justify-between gap-4">
+        <h1 class="text-3xl font-bold">Productos</h1>
+
+        <button
+          id="theme-toggle"
+          type="button"
+          class="rounded-lg bg-secondary px-4 py-2 font-medium text-white transition hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 dark:bg-slate-200 dark:text-slate-900 dark:focus-visible:ring-slate-200 dark:focus-visible:ring-offset-slate-950"
+        >
+          Cambiar tema
+        </button>
+      </header>
+
+      <section
+        class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3"
+        aria-label="Listado de productos"
+      >
+        <article
+          class="overflow-hidden rounded-xl bg-white shadow-md transition-colors dark:bg-slate-900"
+        >
+          <img
+            class="h-56 w-full object-cover"
+            src="https://placehold.co/600x400?text=Auriculares"
+            alt="Auriculares inalámbricos negros"
+          />
+
+          <div class="p-card">
+            <h2 class="text-2xl font-bold text-secondary dark:text-slate-100">
+              Auriculares inalámbricos
+            </h2>
+
+            <p class="mt-2 text-slate-600 dark:text-slate-300">
+              Auriculares cómodos con conexión Bluetooth y batería de larga
+              duración.
+            </p>
+
+            <p
+              class="mt-4 text-xl font-semibold text-secondary dark:text-slate-100"
+            >
+              79,99 €
+            </p>
+
+            <button
+              type="button"
+              class="mt-6 w-full rounded-lg bg-primary px-4 py-2 font-medium text-white transition hover:bg-primary-dark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 active:scale-95 disabled:cursor-not-allowed disabled:bg-slate-400 disabled:opacity-60 disabled:active:scale-100 dark:focus-visible:ring-offset-slate-900"
+            >
+              Comprar
+            </button>
+          </div>
+        </article>
+
+        <article
+          class="overflow-hidden rounded-xl bg-white shadow-md transition-colors dark:bg-slate-900"
+        >
+          <img
+            class="h-56 w-full object-cover"
+            src="https://placehold.co/600x400?text=Teclado"
+            alt="Teclado mecánico"
+          />
+
+          <div class="p-card">
+            <h2 class="text-2xl font-bold text-secondary dark:text-slate-100">
+              Teclado mecánico
+            </h2>
+
+            <p class="mt-2 text-slate-600 dark:text-slate-300">
+              Teclado mecánico compacto con iluminación y conexión por USB.
+            </p>
+
+            <p
+              class="mt-4 text-xl font-semibold text-secondary dark:text-slate-100"
+            >
+              64,99 €
+            </p>
+
+            <button
+              type="button"
+              class="mt-6 w-full rounded-lg bg-primary px-4 py-2 font-medium text-white transition hover:bg-primary-dark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 active:scale-95 disabled:cursor-not-allowed disabled:bg-slate-400 disabled:opacity-60 disabled:active:scale-100 dark:focus-visible:ring-offset-slate-900"
+            >
+              Comprar
+            </button>
+          </div>
+        </article>
+
+        <article
+          class="overflow-hidden rounded-xl bg-white shadow-md transition-colors dark:bg-slate-900"
+        >
+          <img
+            class="h-56 w-full object-cover"
+            src="https://placehold.co/600x400?text=Mouse"
+            alt="Mouse inalámbrico"
+          />
+
+          <div class="p-card">
+            <h2 class="text-2xl font-bold text-secondary dark:text-slate-100">
+              Mouse inalámbrico
+            </h2>
+
+            <p class="mt-2 text-slate-600 dark:text-slate-300">
+              Mouse ergonómico con conexión inalámbrica y batería recargable.
+            </p>
+
+            <p
+              class="mt-4 text-xl font-semibold text-secondary dark:text-slate-100"
+            >
+              39,99 €
+            </p>
+
+            <button
+              type="button"
+              disabled
+              class="mt-6 w-full rounded-lg bg-primary px-4 py-2 font-medium text-white transition hover:bg-primary-dark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 active:scale-95 disabled:cursor-not-allowed disabled:bg-slate-400 disabled:opacity-60 disabled:active:scale-100 dark:focus-visible:ring-offset-slate-900"
+            >
+              Agotado
+            </button>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <script>
+      const themeToggleButton = document.querySelector("#theme-toggle");
+
+      themeToggleButton.addEventListener("click", () => {
+        document.documentElement.classList.toggle("dark");
+      });
+    </script>
+  </body>
+</html>
