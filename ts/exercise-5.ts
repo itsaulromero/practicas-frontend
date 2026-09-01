@@ -66,7 +66,3 @@ export async function getPokemon(name: string): Promise<Pokemon> {
 
   return data;
 }
-
-const pokemon = await getPokemon("ditto");
-
-console.log(pokemon);
