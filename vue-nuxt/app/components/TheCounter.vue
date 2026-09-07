@@ -18,12 +18,20 @@ const decrement = () => {
 
     <p>{{ count }}</p>
 
-    <button type="button" @click="increment">
-      Increment
+    <button
+      v-if="count < 10"
+      type="button"
+      @click="increment"
+    >
+      Increase
     </button>
 
-    <button type="button" @click="decrement">
-      Decrement
+    <button
+      v-if="count > 0"
+      type="button"
+      @click="decrement"
+    >
+      Decrease
     </button>
   </section>
 </template>
