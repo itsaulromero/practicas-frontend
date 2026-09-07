@@ -3,7 +3,7 @@
 
   <NuxtLayout>
     <main class="font-sans">
-      <TheTitle prop-title="Nuxt Vue Exercises" />
+      <TheTitle>Nuxt Vue Exercises</TheTitle>
 
       <p class="text-secondary">
         Proyecto de ejercicios con Vue 3 y Nuxt 4.
