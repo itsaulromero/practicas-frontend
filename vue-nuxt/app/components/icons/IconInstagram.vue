@@ -1,0 +1,27 @@
+<template>
+  <svg
+    viewBox="0 0 24 24"
+    width="32"
+    height="32"
+    aria-hidden="true"
+  >
+    <rect
+      x="3"
+      y="3"
+      width="18"
+      height="18"
+      rx="5"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+    />
+    <circle
+      cx="12"
+      cy="12"
+      r="4"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+    />
+  </svg>
+</template>
