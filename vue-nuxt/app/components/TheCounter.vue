@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed, ref, watch } from 'vue'
 
 const {
   count,
@@ -9,6 +9,18 @@ const {
 } = useCounter()
 
 const doubledCount = computed(() => count.value * 2)
+
+const counterMessage = ref('Estás en el valor mínimo')
+
+watch(count, (newValue) => {
+  if (newValue === 0) {
+    counterMessage.value = 'Estás en el valor mínimo'
+  } else if (newValue === 10) {
+    counterMessage.value = 'Estás en el valor máximo'
+  } else {
+    counterMessage.value = 'Estás en los parámetros adecuados'
+  }
+})
 </script>
 
 <template>
@@ -17,6 +29,10 @@ const doubledCount = computed(() => count.value * 2)
 
     <TheTitle>
       Doubled Counter: {{ doubledCount }}
+    </TheTitle>
+
+    <TheTitle>
+      {{ counterMessage }}
     </TheTitle>
 
     <p :class="{ 'text-green-500': count === 10 }">
