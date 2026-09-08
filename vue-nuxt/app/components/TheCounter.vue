@@ -1,15 +1,10 @@
 <script setup lang="ts">
-import { ref } from 'vue'
-
-const count = ref(0)
-
-const increment = () => {
-  count.value++
-}
-
-const decrement = () => {
-  count.value--
-}
+const {
+  count,
+  increment,
+  decrement,
+  reset,
+} = useCounter()
 </script>
 
 <template>
@@ -30,6 +25,13 @@ const decrement = () => {
       @click="decrement"
     >
       Decrease
+    </BaseButton>
+
+    <BaseButton
+      v-if="count > 0"
+      @click="reset"
+    >
+      Reset
     </BaseButton>
   </section>
 </template>
