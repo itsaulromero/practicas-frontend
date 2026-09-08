@@ -1,11 +1,13 @@
 <script setup lang="ts">
-defineProps<{
+interface ProductCardProps {
   image: string
   title: string
   description: string
   price: number
   button: string
-}>()
+}
+
+defineProps<ProductCardProps>()
 </script>
 
 <template>
