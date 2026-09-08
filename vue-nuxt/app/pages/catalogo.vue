@@ -1,6 +1,10 @@
 <script setup lang="ts">
 import { products } from '~/data/mock'
 
+definePageMeta({
+  layout: 'catalogo',
+})
+
 const counterStore = useCounterStore()
 </script>
 
