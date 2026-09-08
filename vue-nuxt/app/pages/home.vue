@@ -22,6 +22,10 @@ const textColorClasses = {
       <TheCounter />
     </div>
 
+    <div class="mt-6">
+      <ParentComponent />
+    </div>
+
     <NuxtLink
       class="btn inline-block"
       to="/catalogo"
