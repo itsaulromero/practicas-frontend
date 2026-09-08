@@ -11,8 +11,9 @@ const {
   <section>
     <TheTitle>Counter</TheTitle>
 
-    <p>{{ count }}</p>
-
+    <p :class="{ 'text-green-500': count === 10 }">
+      {{ count }}
+    </p>
     <BaseButton
       v-if="count < 10"
       @click="increment"
