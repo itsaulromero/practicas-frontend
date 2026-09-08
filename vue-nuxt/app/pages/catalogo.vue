@@ -1,10 +1,16 @@
 <script setup lang="ts">
 import { products } from '~/data/mock'
+
+const counterStore = useCounterStore()
 </script>
 
 <template>
   <main class="mx-auto max-w-6xl p-6 font-sans">
     <TheTitle>Product Catalog</TheTitle>
+
+    <p class="mt-2 text-secondary">
+      Global counter: {{ counterStore.count }}
+    </p>
 
     <NuxtLink
       class="btn inline-block"
