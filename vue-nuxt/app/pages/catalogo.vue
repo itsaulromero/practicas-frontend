@@ -1,6 +1,9 @@
 <script setup lang="ts">
 import type { ProductsResponse } from '~/types/product'
-
+useSeoMeta({
+  title: 'Product Catalog - Nuxt Vue Exercises',
+  description: 'Catálogo de productos obtenidos desde una API externa.',
+})
 definePageMeta({
   layout: 'catalogo',
 })

@@ -1,6 +1,9 @@
 <script setup lang="ts">
 const color = 'red'
-
+useSeoMeta({
+  title: 'Home - Nuxt Vue Exercises',
+  description: 'Página principal de los ejercicios realizados con Vue 3 y Nuxt 4.',
+})
 const textColorClasses = {
   red: 'text-red-500',
 } as const
