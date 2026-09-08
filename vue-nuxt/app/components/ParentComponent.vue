@@ -1,7 +1,11 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { provide, ref } from 'vue'
 
 const greeting = ref('')
+
+const parentMessage = 'Hello from the parent component!'
+
+provide('parentMessage', parentMessage)
 
 const handleGreeting = () => {
   greeting.value = 'Hello from the child component!'
